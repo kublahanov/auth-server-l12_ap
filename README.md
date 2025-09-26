@@ -90,8 +90,8 @@ cd jat-server-l12_ap
 ### Внесение вклада
 
 Если у вас есть предложения по улучшению этого проекта или вы хотите сообщить об ошибке, воспользуйтесь этими средствами:
-- https://github.com/kublahanov/.../issues,
-- https://github.com/kublahanov/.../pulls.
+- https://github.com/kublahanov/jat-server-l12_ap/issues,
+- https://github.com/kublahanov/jat-server-l12_ap/pulls.
 
 ### Лицензия
 
