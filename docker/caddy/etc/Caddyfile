@@ -1,30 +1,39 @@
-backend.local {
-    root * /var/www/jwt-auth-template-server-api-laravel-12/public
+#backend.local {
+#    root * /var/www/public
+#
+#    # Включаем логирование для дебага
+#    log {
+#        output stdout
+#        format console
+#    }
+#
+#    # PHP-FPM обработка
+#    php_fastcgi app:9000 {
+#        # Разрешаем доступ к файлам с другими правами
+#        resolve_root_symlink
+#        trusted_proxies private_ranges
+#    }
+#
+#    # File server
+#    file_server {
+#        index index.php index.html
+#    }
+#
+#    # Явное правило для корневого пути
+#    # @root {
+#    #     path /
+#    # }
+#    # rewrite @root /index.php
+#
+#    # Для SPA - все запросы на index.php
+#    try_files {path} {path}/ /index.php?{query}
+#}
 
-    # Включаем логирование для дебага
-    log {
-        output stdout
-        format console
-    }
-
-    # PHP-FPM обработка
-    php_fastcgi app:9000 {
-        # Разрешаем доступ к файлам с другими правами
-        resolve_root_symlink
-        trusted_proxies private_ranges
-    }
-
-    # File server
-    file_server {
-        index index.php index.html
-    }
-
-    # Явное правило для корневого пути
-    # @root {
-    #     path /
-    # }
-    # rewrite @root /index.php
-
-    # Для SPA - все запросы на index.php
+localhost {
+    root * /var/www/public
+    php_fastcgi app:9000
+    file_server
     try_files {path} {path}/ /index.php?{query}
+
+    tls internal
 }
