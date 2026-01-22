@@ -17,8 +17,8 @@ use Illuminate\Auth\AuthenticationException;
 use Symfony\Component\Serializer\NameConverter\SnakeCaseToCamelCaseNameConverter;
 
 return [
-    'title' => 'API Platform',
-    'description' => 'My awesome API',
+    'title' => 'JWT Auth server API',
+    'description' => 'API for JWT Auth server',
     'version' => '1.0.0',
     'show_webby' => true,
 
@@ -33,8 +33,8 @@ return [
     ],
 
     'formats' => [
+        'jsonapi' => ['application/vnd.api+json'],
         'jsonld' => ['application/ld+json'],
-        // 'jsonapi' => ['application/vnd.api+json'],
         // 'csv' => ['text/csv'],
     ],
 
