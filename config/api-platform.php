@@ -62,7 +62,8 @@ return [
         'pagination_items_per_page' => 30,
         'pagination_maximum_items_per_page' => 30,
         'route_prefix' => '/api',
-        'middleware' => [],
+        'middleware' => 'auth:sanctum',
+        // 'middleware' => [],
     ],
 
     'pagination' => [
@@ -97,13 +98,13 @@ return [
 
     'swagger_ui' => [
         'enabled' => true,
-        // 'apiKeys' => [
-        //    'api' => [
-        //        'type' => 'Bearer',
-        //        'name' => 'Authentication Token',
-        //        'in' => 'header'
-        //    ]
-        // ],
+        'apiKeys' => [
+           'api' => [
+               'type' => 'Bearer',
+               'name' => 'Authentication Token',
+               'in' => 'header'
+           ]
+        ],
         // 'oauth' => [
         //    'enabled' => true,
         //    'type' => 'oauth2',
