@@ -51,14 +51,21 @@ services:
       - app
 
   mailpit:
-      image: axllent/mailpit
-      container_name: auth_api_mailpit
-      ports:
-          - "8025:8025"  # Web UI
-          - "1025:1025"  # SMTP
+    image: auth_api-mailpit:latest
+    container_name: auth_api_mailpit
+    pull_policy: never
+    build:
+      context: ./docker/mailpit
+    ports:
+      - "1025:1025"
+      - "8025:8025"
+    volumes:
+      - mailpit_data:/data
 
 volumes:
   pg_data:
     name: auth_api_pg_data
   caddy_data:
     name: auth_api_caddy_data
+  mailpit_data:
+    name: auth_api_mailpit_data
